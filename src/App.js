@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import {appRoutes} from './routes/index';
 import PropTypes from 'prop-types';
-import {setHistoryThunk} from './state/thunks/common.thunk';
+import {
+  setHistoryThunk,
+  setCurrentLanguageThunk,
+} from './state/thunks/common.thunk';
 import {noop} from 'lodash';
 import {connect} from 'react-redux';
 
@@ -11,13 +14,17 @@ class App extends Component {
   static propTypes = {
     history: PropTypes.object,
     setHistory: PropTypes.func,
+    setCurrentLanguage: PropTypes.func,
   };
 
   UNSAFE_componentWillMount () {
     const {
-      setHistory = noop, history,
+      setHistory = noop,
+      history,
+      setCurrentLanguage = noop,
     } = this.props;
     setHistory(history); // history used for routing to another page, proptypes history provided by react-router v4
+    setCurrentLanguage('en'); // initialize language
   }
 
   render () {
@@ -49,6 +56,7 @@ const mapStateToProps = () => ({});
 
 export const mapDispatchToProps = (dispatch) => ({
   setHistory: (history) => dispatch(setHistoryThunk(history)),
+  setCurrentLanguage: (languageId) => dispatch(setCurrentLanguageThunk(languageId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

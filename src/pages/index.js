@@ -38,12 +38,8 @@ class Index extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  ...state,
-});
+const mapStateToProps = () => ({});
 
-export const mapDispatchToProps = (dispatch) => ({
-  dispatch,
-});
+export const mapDispatchToProps = () => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Index);

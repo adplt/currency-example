@@ -1,19 +1,15 @@
-FROM node:6
+FROM node:7.8.0
 
-# Create app directory
-WORKDIR /usr/src/app
+ENV NPM_CONFIG_LOGLEVEL warn
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
-RUN npm install
-# If you are building your code for production
-# RUN npm install --only=production
-
-# Bundle app source
 COPY . .
 
-EXPOSE 8080
-CMD [ "npm", "start" ]
+RUN npm install
+
+RUN npm run build --production
+
+RUN npm install pm2 -g
+
+CMD pm2 start ./production.js --name shopee-test
+
+EXPOSE 3000

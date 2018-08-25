@@ -1,0 +1,53 @@
+{
+  "body": {
+
+  },
+  "bodyUsed": false,
+  "data": {
+    "base": "USD",
+    "date": "2018-08-23",
+    "rates": {
+      "AUD": 1.3721,
+      "BGN": 1.6891,
+      "BRL": 4.057,
+      "CAD": 1.3031,
+      "CHF": 0.98307,
+      "CNY": 6.8782,
+      "CZK": 22.207,
+      "DKK": 6.4418,
+      "GBP": 0.77622,
+      "HKD": 7.85,
+      "HRK": 6.4231,
+      "HUF": 279.66,
+      "IDR": 14630.0,
+      "ILS": 3.6361,
+      "INR": 70.111,
+      "ISK": 107.95,
+      "JPY": 110.81,
+      "KRW": 1122.5,
+      "MXN": 18.779,
+      "MYR": 4.105,
+      "NOK": 8.3326,
+      "NZD": 1.4986,
+      "PHP": 53.483,
+      "PLN": 3.6948,
+      "RON": 4.0055,
+      "RUB": 67.87,
+      "SEK": 9.0837,
+      "SGD": 1.3701,
+      "THB": 32.78,
+      "TRY": 6.069,
+      "ZAR": 14.224,
+      "EUR": 0.86363
+    }
+  },
+  "headers": {
+
+  },
+  "ok": true,
+  "redirected": false,
+  "status": 200,
+  "statusText": "OK",
+  "type": "cors",
+  "url": "https://api.exchangeratesapi.io/latest?base=USD"
+}
